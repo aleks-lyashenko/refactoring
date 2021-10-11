@@ -9,7 +9,7 @@
 
         <h1 class="text-center mb-5">Регистрация</h1>
 
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="{{route('register.store')}}" method="post" enctype="multipart/form-data">
 
             @csrf
 

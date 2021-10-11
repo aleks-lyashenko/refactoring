@@ -10,6 +10,15 @@ class UserController extends Controller
         return view('user.create');
     }
 
+    public function store(Request $request) {
+        //валидация
+
+        //проверка был ли загружен аватар
+
+        //сохранение данных в БД
+//        Post::
+    }
+
     public function loginForm() {
         return view('user.login');
     }

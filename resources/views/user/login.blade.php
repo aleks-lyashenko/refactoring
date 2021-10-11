@@ -5,7 +5,9 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container  position-absolute top-50 start-50 translate-middle">
+
+        <h1 class="text-center mb-5">Вход в систему</h1>
 
         <form action="" method="post">
 
@@ -13,12 +15,12 @@
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}">
+                <input type="email" class="form-control mb-3" id="email" name="email" value="{{old('email')}}">
             </div>
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <input type="password" class="form-control mb-3" id="password" name="password">
             </div>
 
             <button type="submit" class="btn btn-primary">Send</button>

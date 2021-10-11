@@ -18,7 +18,7 @@
                     <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{route('create')}}">Регистрация</a>
+                                <a class="nav-link active" aria-current="page" href="{{route('register.create')}}">Регистрация</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" href="{{route('login.create')}}">Вход</a>

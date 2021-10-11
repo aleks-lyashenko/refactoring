@@ -16,6 +16,19 @@
 </style>
 <body>
 
+<header>
+    <div class="container">
+        <nav class="navbar navbar-light bg-light">
+            <form class="container-fluid">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Панель информации</span>
+                    <input type="text" class="form-control" placeholder="Здесь будут появляться сообщения" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </form>
+        </nav>
+    </div>
+</header>
+
 <main>
     @yield('content')
 </main>
