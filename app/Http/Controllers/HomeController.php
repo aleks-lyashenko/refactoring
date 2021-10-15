@@ -10,7 +10,9 @@ class HomeController extends Controller
 {
     public function index() {
 
+        $post = Post::find(5);
 
+        dump($post->title);
 
         return view('home');
     }
