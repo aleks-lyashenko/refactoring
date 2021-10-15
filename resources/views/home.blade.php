@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container">
-        <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="mt-5">
             <h1 class="mb-5 text-center">Добро пожаловать</h1>
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light rounded" aria-label="Twelfth navbar example">
@@ -24,7 +24,16 @@
                                 <a class="nav-link active" href="{{route('login.create')}}">Вход</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Просмотр контента</a>
+                                <a class="nav-link active" href="{{route('login.create')}}">Просмотр постов</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{route('login.create')}}">Добавление</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{route('login.create')}}">Изменение</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Неактивный контент</a>
                             </li>
                         </ul>
                     </div>

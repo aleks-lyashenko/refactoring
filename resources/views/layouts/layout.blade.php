@@ -14,7 +14,7 @@
         background-color: #ededed;
     }
 </style>
-<body>
+<body class="d-flex flex-column h-100">
 
 <header>
     <div class="container">
@@ -29,11 +29,11 @@
     </div>
 </header>
 
-<main>
+<main class="flex-shrink-0 py-5">
     @yield('content')
 </main>
 
-{{--@extends('layouts.footer')--}}
+@extends('layouts.footer')
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 </body>

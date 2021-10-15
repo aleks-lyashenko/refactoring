@@ -1,5 +1,5 @@
 <footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-        <span class="text-muted">Поместите сюда липкий футер.</span>
+    <div class="container text-center">
+        <span class="text-muted">{{date('d-M-Y H-i-s')}}</span>
     </div>
 </footer>
