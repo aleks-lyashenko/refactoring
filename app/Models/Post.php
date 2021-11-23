@@ -9,7 +9,14 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'title', 'content'
+    public function rubric() {
+        return $this->belongsTo(Rubric::class);
+    }
+
+    //Laravel будет автоматически заполнять эти поля в таблице
+    protected $attributes = [
+//        'content' => 'Content post ...',
     ];
+
+    protected $fillable = ['title', 'content'];
 }

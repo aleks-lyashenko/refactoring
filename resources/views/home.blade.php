@@ -21,16 +21,16 @@
                                 <a class="nav-link active" aria-current="page" href="{{route('register.create')}}">Регистрация</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{route('login.create')}}">Вход</a>
+                                <a class="nav-link active" href="{{route('login')}}">Вход</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{route('login.create')}}">Просмотр постов</a>
+                                <a class="nav-link active" href="{{route('portfolio')}}">Портфолио</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{route('login.create')}}">Добавление</a>
+                                <a class="nav-link active" href="{{route('front')}}">Тестирование верстки</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{route('login.create')}}">Изменение</a>
+                                <a class="nav-link active" href="{{route('pass')}}">Справочник телефонов</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Неактивный контент</a>
@@ -42,6 +42,7 @@
 
         </div>
     </div>
+
 
 @endsection
 
