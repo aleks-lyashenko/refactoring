@@ -1,40 +1,66 @@
+
 <!doctype html>
-<html lang="en">
+<html lang="ru" prefix="og: http://ogp.me/ns#">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow"><link rel="canonical" href="https://bootstrap5.ru/examples/album" />
+    <meta name="description" content="Простой одностраничный шаблон на bootstrap 5 для фотогалерей, портфолио и многого другого.">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors, Alexey Golyagin">
+    <meta name="docsearch:language" content="ru">
+    <meta name="docsearch:version" content="5.0">
+    <title>@section('title')My Site::@show</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootstrap5.ru/css/docs.css">
 
-<title>@section('title')My Site @show</title>
+    <link rel="stylesheet" href="/public/test/css/test.css">
+
 </head>
-<style>
-    body {
-        background-color: #ededed;
-    }
-</style>
-<body class="d-flex flex-column h-100">
-
+<body>
 <header>
-    <div class="container">
-        <nav class="navbar navbar-light bg-light">
-            <form class="container-fluid">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Панель информации</span>
-                    <input type="text" class="form-control" placeholder="Здесь будут появляться сообщения" aria-label="Username" aria-describedby="basic-addon1">
+    @section('header')
+    <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-white">О нас</h4>
+                    <p class="text-muted">Добавьте информацию об альбоме ниже, авторе или любом другом фоновом контексте. Составьте несколько предложений, чтобы люди могли почерпнуть некоторые полезные сведения. Затем свяжите их с некоторыми сайтами социальных сетей или с контактной информацией.</p>
                 </div>
-            </form>
-        </nav>
+                <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-white">Связаться с нами</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('page.about')}}" class="text-white">About</a></li>
+                        <li><a href="#" class="text-white">Лайк в Facebook</a></li>
+                        <li><a href="#" class="text-white">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a href="{{route('home')}}" class="navbar-brand d-flex align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" Посмотретьbox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                <strong>Album</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+    @show
 </header>
 
-<main class="flex-shrink-0 py-5">
-    @yield('content')
+<main>
+
+@yield('content')
+
 </main>
 
-@extends('layouts.footer')
+@include('layouts.footer')
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

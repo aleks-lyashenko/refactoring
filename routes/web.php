@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('page/about', [PageController::class, 'show'])->name('page.about');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -106,3 +107,11 @@ Route::get('/test/{id}', function ($id) {
 Route::match(['get', 'post', 'put'], 'form', function () {
     return view('test/form');
 });
+
+//Maxmoll
+
+Route::get('/order', [OrderController::class, 'form'])->name('maxmoll.order');
+
+//function () {
+//    return view('maxmoll/order');
+//}
