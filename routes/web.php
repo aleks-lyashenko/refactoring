@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\test\CRUDController;
 use App\Http\Controllers\Test\PrimerController;
@@ -112,6 +113,3 @@ Route::match(['get', 'post', 'put'], 'form', function () {
 
 Route::get('/order', [OrderController::class, 'form'])->name('maxmoll.order');
 
-//function () {
-//    return view('maxmoll/order');
-//}
