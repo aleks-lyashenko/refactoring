@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class OrderController extends Controller
 {
@@ -30,6 +31,32 @@ class OrderController extends Controller
 //        Получить все поля
 //        dd($request->all());
 //        Order::create($request->all()); Сохранить все поля в БД
+
+        //Валидация данных
+
+//        $this->validate($request, [
+//            'customer' => 'required|min:5|max:255|',
+//            'phone' => 'required|numeric',
+//            'user' => 'required|',
+//            'type' => 'required',
+//            'status' => 'required',
+//        ]);
+
+        $rules = [
+            'customer' => 'required',
+            'phone' => 'required|numeric',
+            'user' => 'required|',
+            'type' => 'required',
+            'status' => 'required',
+        ];
+        //кастомизация сообщений об ошибке
+        $messages = [
+            'customer.required' => 'Выберите менеджера',
+            'phone.numeric' => 'В номере телефона разрешены только цифры',
+        ];
+
+        $validator = Validator::make($request->all(), $rules,$messages)->validate();
+
         $order = new Order();
 //        dd($request->input('user'));
         $order->customer = $request->input('customer');
