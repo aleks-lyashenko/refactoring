@@ -111,5 +111,7 @@ Route::match(['get', 'post', 'put'], 'form', function () {
 
 //Maxmoll
 
-Route::get('/order', [OrderController::class, 'form'])->name('maxmoll.order');
+Route::get('/maxmoll', [OrderController::class, 'index'])->name('maxmoll.home');
+Route::get('/create', [OrderController::class, 'create'])->name('maxmoll.create');
+Route::post('/maxmoll', [OrderController::class, 'store'])->name('maxmoll.store');
 

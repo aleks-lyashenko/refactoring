@@ -25,12 +25,12 @@
             <div class="row">
                 <div class="col-sm-8 col-md-7 py-4">
                     <h4 class="text-white">О нас</h4>
-                    <p class="text-muted">Добавьте информацию об альбоме ниже, авторе или любом другом фоновом контексте. Составьте несколько предложений, чтобы люди могли почерпнуть некоторые полезные сведения. Затем свяжите их с некоторыми сайтами социальных сетей или с контактной информацией.</p>
+                    <p class="text-muted">Здесь будут все созданные сервисы.</p>
                 </div>
                 <div class="col-sm-4 offset-md-1 py-4">
-                    <h4 class="text-white">Связаться с нами</h4>
+                    <h4 class="text-white">App Maxmoll</h4>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('page.about')}}" class="text-white">About</a></li>
+                        <li><a href="{{route('maxmoll.create')}}" class="text-white">Сделать заказ</a></li>
                         <li><a href="#" class="text-white">Лайк в Facebook</a></li>
                         <li><a href="#" class="text-white">Email</a></li>
                     </ul>
@@ -42,7 +42,7 @@
         <div class="container">
             <a href="{{route('home')}}" class="navbar-brand d-flex align-items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" Посмотретьbox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                <strong>Album</strong>
+                <strong>Home</strong>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
