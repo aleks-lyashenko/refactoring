@@ -8,6 +8,7 @@ use App\Http\Controllers\test\CRUDController;
 use App\Http\Controllers\Test\PrimerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -114,4 +115,7 @@ Route::match(['get', 'post', 'put'], 'form', function () {
 Route::get('/maxmoll', [OrderController::class, 'index'])->name('maxmoll.home');
 Route::get('/create', [OrderController::class, 'create'])->name('maxmoll.create');
 Route::post('/maxmoll', [OrderController::class, 'store'])->name('maxmoll.store');
+
+//mail
+Route::get('send', [ContactController::class, 'send'])->name('maxmoll.send');
 

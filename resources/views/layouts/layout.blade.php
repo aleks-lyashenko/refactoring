@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="ru" prefix="og: http://ogp.me/ns#">
 <head>
@@ -11,10 +10,8 @@
     <meta name="docsearch:version" content="5.0">
     <title>@section('title')My Site::@show</title>
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://bootstrap5.ru/css/docs.css">
 
-    <link rel="stylesheet" href="/public/test/css/test.css">
+    <link rel="stylesheet" href="{{asset('public/css/styles.css')}}">
 
 </head>
 <body>
@@ -30,9 +27,9 @@
                 <div class="col-sm-4 offset-md-1 py-4">
                     <h4 class="text-white">App Maxmoll</h4>
                     <ul class="list-unstyled">
+                        <li><a href="{{route('maxmoll.home')}}" class="text-white">Домашняя Maxmoll</a></li>
                         <li><a href="{{route('maxmoll.create')}}" class="text-white">Сделать заказ</a></li>
-                        <li><a href="#" class="text-white">Лайк в Facebook</a></li>
-                        <li><a href="#" class="text-white">Email</a></li>
+                        <li><a href="{{route('maxmoll.send')}}" class="text-white">Отправка email</a></li>
                     </ul>
                 </div>
             </div>
@@ -54,13 +51,17 @@
 
 <main>
 
-@yield('content')
+    <div class="container">
+        @include('layouts.alert')
+    </div>
+
+    @yield('content')
 
 </main>
 
 @include('layouts.footer')
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('public/js/scripts.js')}}"></script>
 
 </body>
 </html>

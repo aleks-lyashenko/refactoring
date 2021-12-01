@@ -7,16 +7,6 @@
 @section('content')
     <div class="container">
 
-        @if($errors->any())
-            <div class="my-3 alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $message)
-                        <li>{{$message}}</li>
-                    @endforeach
-                </ul>
-
-            </div>
-        @endif
 
         <form class="my-3" action="{{route('maxmoll.store')}}" method="post">
             @csrf
@@ -36,10 +26,16 @@
                 </select>
             </div>
 
-            <label>
-                Введите имя клиента
-                <input class="form-control" type="text" name="customer" value="{{old('customer')}}">
-            </label>
+            <div class="">
+                <label>
+                    Введите имя клиента
+                    <input class="form-control @error('customer') is-invalid @enderror" type="text" name="customer" value="{{old('customer')}}">
+                </label>
+
+                @error('customer')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
 
             <label>
                 Телефон клиента
