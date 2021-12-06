@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container position-absolute top-50 start-50 translate-middle">
+    <div class="container">
 
         <h1 class="text-center mb-5">Регистрация</h1>
 

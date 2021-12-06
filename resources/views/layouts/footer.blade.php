@@ -6,4 +6,13 @@
             <a href="#">Наверх</a>
         </p>
     </div>
+    <div class="container">
+        <ul>
+            @foreach($rubrics as $rubric)
+                <li>
+                    <a href="">{{$rubric->title}}</a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
 </footer>

@@ -3,7 +3,14 @@
         {{session('success')}}
     </div>
 
-    @endif
+@endif
+
+@if(session('error'))
+    <div class="my-3 alert alert-danger">
+        {{session('error')}}
+    </div>
+
+@endif
 
 @if($errors->any())
     <div class="my-3 alert alert-danger">

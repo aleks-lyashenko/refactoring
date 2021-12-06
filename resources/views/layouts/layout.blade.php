@@ -27,9 +27,44 @@
                 <div class="col-sm-4 offset-md-1 py-4">
                     <h4 class="text-white">App Maxmoll</h4>
                     <ul class="list-unstyled">
+
+                        <li><p class="text-muted">Project MaxMoll (поменять БД)</p></li>
                         <li><a href="{{route('maxmoll.home')}}" class="text-white">Домашняя Maxmoll</a></li>
                         <li><a href="{{route('maxmoll.create')}}" class="text-white">Сделать заказ</a></li>
                         <li><a href="{{route('maxmoll.send')}}" class="text-white">Отправка email</a></li>
+
+                        <li><p class="text-muted mt-3">Main</p></li>
+
+{{--                        @if(auth()->check())--}}
+{{--                            <li><span class="text-muted">Вы зашли под именем </span><a href="">{{auth()->user()->name}}</a></li>--}}
+{{--                            <li><a href="{{route('logout')}}" class="text-white">Logout</a></li>--}}
+{{--                        @else--}}
+{{--                            <li><a href="{{route('register.create')}}" class="text-white">Зарегистрировать нового пользователя</a></li>--}}
+{{--                            <li><a href="{{route('login')}}" class="text-white">Login</a></li>--}}
+{{--                        @endif--}}
+
+                        @auth
+                            <li><span class="text-muted">Вы зашли под именем </span><a href="">{{auth()->user()->name}}</a></li>
+                            <li><a href="{{route('post.create')}}">Создать статью</a></li>
+                            <li>
+                                <a href="{{route('logout')}}" class="text-white">Logout</a>
+                                @if(auth()->user()->avatar)
+                                    <img src="{{asset('public/storage/' . auth()->user()->avatar)}}" alt="" height="40">
+                                @else
+                                    <img src="{{asset('public/storage/images/guest.png')}}" alt="" height="40">
+                                @endif
+                            </li>
+                        @endauth
+
+{{--                        @auth('admin')--}}
+{{--                            <li><a href="{{route('admin')}}" class="text-white">Admin Zone</a></li>--}}
+{{--                        @endauth--}}
+
+                        @guest
+                            <li><a href="{{route('register.create')}}" class="text-white">Зарегистрировать нового пользователя</a></li>
+                            <li><a href="{{route('login')}}" class="text-white">Login</a></li>
+                        @endguest
+
                     </ul>
                 </div>
             </div>
@@ -37,8 +72,9 @@
     </div>
     <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
+
             <a href="{{route('home')}}" class="navbar-brand d-flex align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" Посмотретьbox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" Посмотреть box="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
                 <strong>Home</strong>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">

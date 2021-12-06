@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
+use App\Models\Rubric;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -27,7 +29,11 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $title = "Создать новую статью";
+
+        $rubrics = Rubric::query()->pluck('title', 'id')->all();
+
+        return view('create', compact('title', 'rubrics'));
     }
 
     /**
@@ -38,7 +44,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->request);
+        $this->validate($request, [
+            'title' => 'required | min:5 | max:100',
+            'content' =>'required',
+            'rubric_id' => 'integer'
+        ]);
+
+        Post::create($request->all());
+
+        $request->session()->flash('success', 'Данные успешно сохранены');
+
+        return redirect()->route('home');
     }
 
     /**
