@@ -50,8 +50,6 @@ class UserController extends Controller
         //перенаправляем на главную
         return redirect()->home();
 
-        //проверка был ли загружен аватар
-
     }
 
     public function loginForm() {
